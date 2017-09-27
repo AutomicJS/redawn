@@ -50,6 +50,9 @@ Redawn.prototype.compile = function () {
     var lineMatcher = src.split(/\r?\n/); 
     for(var i = 0; i < lineMatcher.length; i++) {
        var line = lineMatcher[i];
+       if( line == "" || line.length == 0 ) {
+           line = "<br>";
+       }
        if( line.match( regexBuilderArray.bold ) ) {
            line = line.replace(regexBuilderArray.bold, '<strong>$1</strong>');
        }
